@@ -2,6 +2,7 @@
 
 class WOP_Addon_Tabs {
 
+	const FEATURE = self::FEATURE;
 	private static $instance = null;
 
 	public static function instance () {
@@ -15,14 +16,14 @@ class WOP_Addon_Tabs {
 
 	public function setup ( $page ) {
 		// check this feature
-		if ( ! $page->supports( 'page_tabs' ) ) return;
+		if ( ! $page->supports( self::FEATURE ) ) return;
 
-		$tabs = $page->apply_filters( 'page_tabs', $page->supports['page_tabs'] ?? [] );
+		$tabs = $page->apply_filters( self::FEATURE, $page->supports[ self::FEATURE ] ?? [] );
 		if ( count( $tabs ) > 0 ) {
 			// set the firt tab as default tab
 			$tabs['__default'] = \array_keys( $tabs )[0];
 		}
-		$page->supports['page_tabs'] = $tabs;
+		$page->supports[ self::FEATURE ] = $tabs;
 
 		// hooks
 		$page->add_action( 'before_render_form', [ $this, 'render_tabs' ], 5 );
@@ -34,7 +35,7 @@ class WOP_Addon_Tabs {
 
 	public function render_tabs ( $page ) {
 		$current = $this->get_current_tab( $page );
-		$tabs = $page->supports['page_tabs'];
+		$tabs = $page->supports[ self::FEATURE ];
 		unset( $tabs['__default'] );
 		?>
 
@@ -64,7 +65,7 @@ class WOP_Addon_Tabs {
 	}
 
 	protected function get_current_tab ( $page ) {
-		return $_REQUEST['tab'] ?? $page->supports['page_tabs']['__default'];
+		return $_REQUEST['tab'] ?? $page->supports[ self::FEATURE ]['__default'];
 	}
 }
 
