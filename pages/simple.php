@@ -16,7 +16,7 @@ class WOP_Simple_Page extends WP_Options_Page {
 	public function init () {
 		$this->id = 'wop_simple';
 		$this->menu_title = 'Simple Fields';
-		$this->menu_position = 9999;
+		$this->menu_position = 9997;
 		parent::init();
 	}
 
