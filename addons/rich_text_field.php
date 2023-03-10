@@ -48,7 +48,7 @@ class WOP_Addon_Rich_Text_Field {
 		$page->do_action( 'after_field_input', $field, $this );
 
 		if ( $desc ) : ?>
-		<p class="description" id="<?php echo \esc_attr( $name ); ?>-description"><?php echo $desc ?></p>
+		<p class="description"><?php echo $desc ?></p>
 		<?php endif; ?>
 
 		<?php $page->close_wrapper( $field );
