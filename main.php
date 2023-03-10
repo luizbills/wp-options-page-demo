@@ -8,5 +8,5 @@
 
 defined( 'ABSPATH' ) || die();
 
-require_once 'lib/src/class-wp-options-page.php';
-require_once 'demos/simple.php';
+require_once __DIR__ . '/lib/src/class-wp-options-page.php';
+require_once __DIR__ . '/pages/simple.php';
