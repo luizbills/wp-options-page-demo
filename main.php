@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       WP Options Page Demo
- * Description:       Plugin to test my pages
+ * Description:       Plugin to test the WP Options Page library
  * Author:            Luiz Bills
  * Version:           1.0.0
  */
