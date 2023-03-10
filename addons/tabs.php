@@ -2,7 +2,7 @@
 
 class WOP_Addon_Tabs {
 
-	const FEATURE = self::FEATURE;
+	const FEATURE = 'page_tabs';
 	private static $instance = null;
 
 	public static function instance () {
