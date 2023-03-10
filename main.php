@@ -8,5 +8,12 @@
 
 defined( 'ABSPATH' ) || die();
 
+// load the library
 require_once __DIR__ . '/lib/src/class-wp-options-page.php';
+
+// load the addons
+require_once __DIR__ . '/addons/tabs.php';
+
+// load the pages
 require_once __DIR__ . '/pages/simple.php';
+require_once __DIR__ . '/pages/with_tabs.php';
