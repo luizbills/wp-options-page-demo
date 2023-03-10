@@ -13,7 +13,9 @@ require_once __DIR__ . '/lib/src/class-wp-options-page.php';
 
 // load the addons
 require_once __DIR__ . '/addons/tabs.php';
+require_once __DIR__ . '/addons/rich_text_field.php';
 
 // load the pages
 require_once __DIR__ . '/pages/simple.php';
+require_once __DIR__ . '/pages/advanced.php';
 require_once __DIR__ . '/pages/with_tabs.php';
