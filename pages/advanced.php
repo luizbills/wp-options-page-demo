@@ -18,7 +18,7 @@ class WOP_Advanced_Page extends WP_Options_Page {
 		$this->menu_title = 'Advanced Fields';
 		$this->menu_position = 9998;
 
-		// declare the custom features
+		// see addons/rich_text_field.php
 		$this->supports[] = 'rich_text_field';
 
 		parent::init();
