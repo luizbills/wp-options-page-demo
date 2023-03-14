@@ -41,7 +41,10 @@ class WOP_Simple_Page extends WP_Options_Page {
 					},
 					'required' => true
 				],
-				'description' => 'Simple text field with type="number"'
+				'description' => 'Simple text field with type="number"',
+				'@sanitize' => function ( $value ) {
+					return floatval( trim( $value ) );
+				}
 			],
 			[
 				'id' => 'simple_text_date',
@@ -64,10 +67,16 @@ class WOP_Simple_Page extends WP_Options_Page {
 				'type' => 'select',
 				'options' => [
 					'' => 'Select an option',
-					'man' => 'Man',
-					'woman' => 'Woman',
+					'ok' => 'OK',
+					'yes' => 'Yes',
+					'err' => 'Error'
 				],
-				'description' => 'Simple select field'
+				'description' => 'Simple select field',
+				'@validate' => function ( $value ) {
+					if ( 'err' === $value ) {
+						throw new \Exception( 'Oh no... an error!' );
+					}
+				}
 			],
 			[
 				'id' => 'simple_checkbox',
