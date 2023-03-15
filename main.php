@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || die();
 
 // load the library
-require_once __DIR__ . '/lib/src/class-wp-options-page.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 // load the addons
 require_once __DIR__ . '/addons/tabs.php';

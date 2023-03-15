@@ -1,0 +1,5 @@
+{
+    "require": {
+        "luizbills/wp-options-page": "^0.4.1"
+    }
+}
