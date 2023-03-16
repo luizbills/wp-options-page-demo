@@ -41,17 +41,13 @@ class WOP_Addon_Rich_Text_Field {
 		$args['textarea_rows'] = $args['textarea_rows'] ?? 5;
 		$args['wpautop'] = $args['wpautop'] ?? true;
 
-		$page->open_wrapper( $field );;
-
 		\wp_editor( $value, $name, $args );
 
 		$page->do_action( 'after_field_input', $field, $this );
 
 		if ( $desc ) : ?>
 		<p class="description"><?php echo $desc ?></p>
-		<?php endif; ?>
-
-		<?php $page->close_wrapper( $field );
+		<?php endif;
 	}
 
 	public function prepare_field ( $field, $page ) {
