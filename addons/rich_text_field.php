@@ -51,7 +51,7 @@ class WOP_Addon_Rich_Text_Field {
 	}
 
 	public function prepare_field ( $field, $page ) {
-		$field['@sanitize'] = null;
+		$field['@sanitize'] = 'wp_kses_post';
 		return $field;
 	}
 }
