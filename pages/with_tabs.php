@@ -31,7 +31,7 @@ class WOP_Page_With_Tabs extends WP_Options_Page {
 	public function get_fields () {
 		return [
 			[
-				'title' => 'A title for the first tab',
+				'title' => 'A title for the 1st tab',
 				'description' => 'Lorem ipsum...',
 				'type' => 'title',
 				'tab' => 'general', // set the field tab
@@ -43,10 +43,15 @@ class WOP_Page_With_Tabs extends WP_Options_Page {
 				'tab' => 'general', // set the field tab
 			],
 			[
+				'title' => 'A title for the 2nd tab',
+				'type' => 'title',
+				'tab' => 'license', // set the field tab
+			],
+			[
 				'id' => 'text_2',
 				'title' => 'License Key',
 				'type' => 'text',
-				'tab' => 'license',
+				'tab' => 'license', // set the field tab
 			],
 		];
 	}
